@@ -1,20 +1,33 @@
 {
   "name": "armedcode_crimsondesert",
   "version": "0.1.0",
-  "private": true,
+  "description": "",
+  "private": false,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "rebuild": "rimraf .next && npm run build"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kirasiris/armedcode_crimsondesert.git"
+  },
+  "author": "Kevin Uriel Fonseca",
+  "license": "MIT",
+  "bugs": {
+    "email": "kebin1421@hotmail.com",
+    "url": "https://github.com/kirasiris/armedcode_crimsondesert/issues"
+  },
+  "homepage": "https://github.com/kirasiris/armedcode_crimsondesert#readme",
   "dependencies": {
+    "depcheck": "^1.4.7",
     "next": "16.3.1",
     "react": "19.2.8",
     "react-dom": "19.2.8"
   },
   "devDependencies": {
-    "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.3.1"
   }

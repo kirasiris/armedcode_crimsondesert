@@ -1,69 +1,38 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Head from "@/app/head";
+import { getGlobalData } from "@/helpers/globalData";
+import MainComponent from "@/components/main";
 
-export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.js</code> file.
-          </h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
-}
+const Home = async () => {
+	const { settings } = await getGlobalData();
+
+	return (
+		<>
+			<Head
+				title={settings?.data?.title}
+				description={settings?.data?.text}
+				favicon={settings?.data?.favicon}
+				postImage={settings?.data?.showcase_image}
+				imageWidth="800"
+				imageHeight="450"
+				videoWidth=""
+				videoHeight=""
+				card="summary"
+				robots=""
+				category=""
+				url="/"
+				author={settings?.data?.author}
+				createdAt={settings?.data?.createdAt}
+				updatedAt={settings?.data?.updatedAt}
+				locales=""
+				posType="website"
+			/>
+			{settings.data?.maintenance === false ? (
+				<MainComponent />
+			) : (
+				<p>Server Error</p>
+			)}
+		</>
+	);
+};
+
+export default Home;
