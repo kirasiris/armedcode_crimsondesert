@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Welcome to Crimson Desert — Loading Screen
 
-## Getting Started
+![Crimson Desert - Loading Screen](screenshot.png)
 
-First, run the development server:
+This is a simple reacreation of the *Crimson Desert* loading screen: an infinite tunnel of geometric shapes moving past the camera towars a pulsing light at the very back of the canvas.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+As usual, the project was built using **Bootstrap css classes only** and plain **JavaScript** with no TypeScript at all.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Live controls (offcanvas sidebar)**
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+The app consists of layout containing both an aside and main elements. The sidebar contains the form with inputs that will help you control the canvas output; these are as follow:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Geometric figure
+- Shape velocity
+- Shape count
+- Canvas color
+- Background sound
+- and Volume
 
-## Learn More
+**Audio**
 
-To learn more about Next.js, take a look at the following resources:
+This form control will give you the opportunity to either choose an mp3 file from your device, paste a YouTube URL or simply play the canvas with no sound, your choice!.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Thanks for reading!
