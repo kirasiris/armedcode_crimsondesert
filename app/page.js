@@ -10,8 +10,8 @@ const Home = async () => {
 			<Head
 				title={settings?.data?.title}
 				description={settings?.data?.text}
-				favicon={settings?.data?.favicon}
-				postImage={settings?.data?.showcase_image}
+				favicon={settings?.data?.favicon?.location?.secure_location}
+				postImage={settings?.data?.showcase_image?.location?.secure_location}
 				imageWidth="800"
 				imageHeight="450"
 				videoWidth=""
